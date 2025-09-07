@@ -1,31 +1,61 @@
-import React from 'react';
-import { Wifi, Phone } from 'lucide-react';
+import { useState } from 'react';
+import { Wifi, Phone, Menu, X } from 'lucide-react';
+
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="bg-blue-900 text-white py-4 px-4 md:px-6 shadow-lg">
+    // Adicionado `relative` para que o menu dropdown se posicione em relação ao cabeçalho
+    <header className="bg-background-dark text-white py-4 px-4 md:px-6 shadow-lg sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <Wifi className="h-8 w-8 text-lime-400" />
+          <Wifi className="h-8 w-8 text-highlight" />
           <span className="text-2xl font-bold">SuperTec</span>
         </div>
+        
+        {/* Navegação para Desktop (sem alterações) */}
         <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-6">
-            <a href="#plans" className="hover:text-lime-400 transition-colors">Planos</a>
-            <a href="#benefits" className="hover:text-lime-400 transition-colors">Benefícios</a>
-            <a href="#about" className="hover:text-lime-400 transition-colors">Sobre</a>
-            <a href="#contact" className="hover:text-lime-400 transition-colors">Contato</a>
+            <a href="#plans" className="hover:text-secondary transition-colors">Planos</a>
+            <a href="#benefits" className="hover:text-secondary transition-colors">Benefícios</a>
+            <a href="#about" className="hover:text-secondary transition-colors">Sobre</a>
+            <a href="#contact" className="hover:text-secondary transition-colors">Contato</a>
           </nav>
-          <a href="tel:+5511999999999" className="flex items-center space-x-2 bg-lime-400 text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-lime-300 transition-colors">
+          <a href="tel:+5511999999999" className="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
             <Phone className="h-4 w-4" />
             <span>(11) 99999-9999</span>
           </a>
         </div>
+        
+        {/* Botão do Menu Mobile */}
         <div className="md:hidden">
-          <a href="tel:+5511999999999" className="bg-lime-400 text-blue-900 px-3 py-2 rounded-lg font-semibold">
-            <Phone className="h-4 w-4" />
-          </a>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none z-50">
+            {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+          </button>
         </div>
+      </div>
+
+      {/* Menu Dropdown Mobile - NOVO ESTILO */}
+      <div
+        className={`
+          md:hidden absolute top-full right-4 mt-2 w-56 
+          bg-background-dark/95 backdrop-blur-sm rounded-md shadow-lg 
+          ring-1 ring-white/10 origin-top-right transition-all duration-200 ease-in-out
+          ${isMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
+        `}
+      >
+        <nav className="flex flex-col p-2">
+          <a href="#plans" onClick={() => setIsMenuOpen(false)} className="hover:bg-primary/50 px-4 py-2 rounded-md transition-colors text-base">Planos</a>
+          <a href="#benefits" onClick={() => setIsMenuOpen(false)} className="hover:bg-primary/50 px-4 py-2 rounded-md transition-colors text-base">Benefícios</a>
+          <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:bg-primary/50 px-4 py-2 rounded-md transition-colors text-base">Sobre</a>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)} className="hover:bg-primary/50 px-4 py-2 rounded-md transition-colors text-base">Contato</a>
+          <div className="border-t border-white/10 my-2"></div>
+          <a href="tel:+5511999999999" className="flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">
+            <Phone className="h-4 w-4" />
+            <span>(11) 99999-9999</span>
+          </a>
+        </nav>
       </div>
     </header>
   );

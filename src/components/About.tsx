@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Award, Users, MapPin, Clock } from 'lucide-react';
 
 const About = () => {
@@ -14,8 +14,8 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
-              Confiança e <span className="text-lime-400">Experiência</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-background-dark mb-6">
+              Confiança e <span className="text-secondary">Experiência</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               Há mais de 15 anos, a SuperTec é sinônimo de internet de qualidade na região. 
@@ -35,22 +35,22 @@ const About = () => {
             
             <button
               onClick={() => window.open('https://wa.me/5511999999999?text=Gostaria de saber mais sobre a SuperTec!', '_blank')}
-              className="bg-blue-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-colors"
+              className="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors"
             >
               Conheça Nossa História
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
                 className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-lime-400 rounded-full mb-4">
-                  <stat.icon className="h-6 w-6 text-blue-900" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-highlight rounded-full mb-4">
+                  <stat.icon className="h-6 w-6 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-blue-900 mb-2">{stat.value}</div>
+                <div className="text-3xl font-bold text-background-dark mb-2">{stat.value}</div>
                 <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
             ))}
@@ -59,26 +59,26 @@ const About = () => {
 
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="bg-lime-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="h-8 w-8 text-blue-900" />
+            <div className="bg-highlight w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Award className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-blue-900 mb-2">Certificações</h3>
+            <h3 className="text-xl font-bold text-background-dark mb-2">Certificações</h3>
             <p className="text-gray-600">Certificados pelos principais órgãos do setor de telecomunicações</p>
           </div>
           
           <div className="text-center">
-            <div className="bg-lime-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="h-8 w-8 text-blue-900" />
+            <div className="bg-highlight w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-blue-900 mb-2">Equipe Especializada</h3>
+            <h3 className="text-xl font-bold text-background-dark mb-2">Equipe Especializada</h3>
             <p className="text-gray-600">Profissionais qualificados e em constante atualização tecnológica</p>
           </div>
           
           <div className="text-center">
-            <div className="bg-lime-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <MapPin className="h-8 w-8 text-blue-900" />
+            <div className="bg-highlight w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MapPin className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-blue-900 mb-2">Cobertura Regional</h3>
+            <h3 className="text-xl font-bold text-background-dark mb-2">Cobertura Regional</h3>
             <p className="text-gray-600">Atendimento local com conhecimento profundo da região</p>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapPin, Phone, Clock } from 'lucide-react';
 
 const Location = () => {
@@ -6,8 +5,8 @@ const Location = () => {
     <section id="location" className="py-20 px-4 md:px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-            Nossa <span className="text-lime-400">Cobertura</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-background-dark mb-4">
+            Nossa <span className="text-secondary">Cobertura</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Verificar se sua região está coberta pela nossa rede de fibra ótica
@@ -31,10 +30,10 @@ const Location = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-blue-50 to-lime-50 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-blue-50 to-yellow-50 rounded-2xl p-6">
               <div className="flex items-center space-x-3 mb-4">
-                <MapPin className="h-6 w-6 text-blue-900" />
-                <h3 className="text-xl font-bold text-blue-900">Área de Cobertura</h3>
+                <MapPin className="h-6 w-6 text-background-dark" />
+                <h3 className="text-xl font-bold text-background-dark">Área de Cobertura</h3>
               </div>
               <ul className="space-y-2 text-gray-700">
                 <li>• Centro da cidade</li>
@@ -45,10 +44,10 @@ const Location = () => {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-lime-50 to-blue-50 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-yellow-50 to-blue-50 rounded-2xl p-6">
               <div className="flex items-center space-x-3 mb-4">
-                <Clock className="h-6 w-6 text-blue-900" />
-                <h3 className="text-xl font-bold text-blue-900">Horário de Atendimento</h3>
+                <Clock className="h-6 w-6 text-background-dark" />
+                <h3 className="text-xl font-bold text-background-dark">Horário de Atendimento</h3>
               </div>
               <div className="space-y-2 text-gray-700">
                 <p><strong>Segunda à Sexta:</strong> 8h às 18h</p>
@@ -57,13 +56,13 @@ const Location = () => {
               </div>
             </div>
 
-            <div className="bg-blue-900 rounded-2xl p-6 text-white text-center">
-              <Phone className="h-8 w-8 text-lime-400 mx-auto mb-3" />
+            <div className="bg-background-dark rounded-2xl p-6 text-white text-center">
+              <Phone className="h-8 w-8 text-secondary mx-auto mb-3" />
               <h3 className="text-lg font-bold mb-2">Verifique sua região</h3>
               <p className="text-blue-100 mb-4">Ligue para confirmar disponibilidade</p>
               <button
                 onClick={() => window.open('https://wa.me/5511999999999?text=Gostaria de verificar se minha região tem cobertura SuperTec', '_blank')}
-                className="bg-lime-400 text-blue-900 px-6 py-3 rounded-xl font-bold hover:bg-lime-300 transition-colors w-full"
+                className="bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors w-full"
               >
                 Consultar WhatsApp
               </button>
@@ -73,7 +72,7 @@ const Location = () => {
 
         <div className="mt-16 bg-gray-50 rounded-2xl p-8 md:p-12">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-blue-900 mb-4">Não está na nossa área ainda?</h3>
+            <h3 className="text-3xl font-bold text-background-dark mb-4">Não está na nossa área ainda?</h3>
             <p className="text-xl text-gray-600">
               Estamos expandindo constantemente nossa rede. Cadastre seu interesse!
             </p>
@@ -81,7 +80,7 @@ const Location = () => {
           <div className="text-center">
             <button
               onClick={() => window.open('https://wa.me/5511999999999?text=Quero me cadastrar para receber informações sobre expansão da SuperTec na minha região', '_blank')}
-              className="bg-lime-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-lime-300 transition-colors"
+              className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors"
             >
               Cadastrar Interesse
             </button>
