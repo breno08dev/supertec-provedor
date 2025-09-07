@@ -1,0 +1,90 @@
+import React from 'react';
+import { Award, Users, MapPin, Clock } from 'lucide-react';
+
+const About = () => {
+  const stats = [
+    { icon: Clock, value: '15+', label: 'Anos de experiência' },
+    { icon: Users, value: '50K+', label: 'Clientes ativos' },
+    { icon: MapPin, value: '25+', label: 'Cidades atendidas' },
+    { icon: Award, value: '99.9%', label: 'Disponibilidade' }
+  ];
+
+  return (
+    <section id="about" className="py-20 px-4 md:px-6 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+              Confiança e <span className="text-lime-400">Experiência</span>
+            </h2>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Há mais de 15 anos, a SuperTec é sinônimo de internet de qualidade na região. 
+              Começamos como uma pequena empresa local com o sonho de conectar pessoas e 
+              negócios com a melhor tecnologia disponível.
+            </p>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Hoje somos referência em conectividade, oferecendo soluções personalizadas 
+              para residências e empresas. Nossa infraestrutura de fibra ótica de última 
+              geração garante velocidade, estabilidade e confiabilidade.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Nosso compromisso vai além de fornecer internet: oferecemos uma experiência 
+              completa com atendimento humanizado, suporte técnico especializado e 
+              soluções que realmente fazem a diferença no seu dia a dia.
+            </p>
+            
+            <button
+              onClick={() => window.open('https://wa.me/5511999999999?text=Gostaria de saber mais sobre a SuperTec!', '_blank')}
+              className="bg-blue-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-colors"
+            >
+              Conheça Nossa História
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-lime-400 rounded-full mb-4">
+                  <stat.icon className="h-6 w-6 text-blue-900" />
+                </div>
+                <div className="text-3xl font-bold text-blue-900 mb-2">{stat.value}</div>
+                <div className="text-gray-600 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 grid md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="bg-lime-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Award className="h-8 w-8 text-blue-900" />
+            </div>
+            <h3 className="text-xl font-bold text-blue-900 mb-2">Certificações</h3>
+            <p className="text-gray-600">Certificados pelos principais órgãos do setor de telecomunicações</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-lime-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="h-8 w-8 text-blue-900" />
+            </div>
+            <h3 className="text-xl font-bold text-blue-900 mb-2">Equipe Especializada</h3>
+            <p className="text-gray-600">Profissionais qualificados e em constante atualização tecnológica</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-lime-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MapPin className="h-8 w-8 text-blue-900" />
+            </div>
+            <h3 className="text-xl font-bold text-blue-900 mb-2">Cobertura Regional</h3>
+            <p className="text-gray-600">Atendimento local com conhecimento profundo da região</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
