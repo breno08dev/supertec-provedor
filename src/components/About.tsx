@@ -3,9 +3,9 @@ import { Award, Users, MapPin, Clock } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: Clock, value: '15+', label: 'Anos de experiência' },
-    { icon: Users, value: '50K+', label: 'Clientes ativos' },
-    { icon: MapPin, value: '25+', label: 'Cidades atendidas' },
+    { icon: Clock, value: '4+', label: 'Anos de experiência' },
+    { icon: Users, value: '1K+', label: 'Clientes ativos' },
+    { icon: MapPin, value: '3+', label: 'Cidades atendidas' },
     { icon: Award, value: '99.9%', label: 'Disponibilidade' }
   ];
 
@@ -18,7 +18,7 @@ const About = () => {
               Confiança e <span className="text-secondary">Experiência</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Há mais de 15 anos, a SuperTec é sinônimo de internet de qualidade na região. 
+              Há mais de 4 anos, a SuperTec é sinônimo de internet de qualidade na região. 
               Começamos como uma pequena empresa local com o sonho de conectar pessoas e 
               negócios com a melhor tecnologia disponível.
             </p>
@@ -34,7 +34,7 @@ const About = () => {
             </p>
             
             <button
-              onClick={() => window.open('https://wa.me/5511999999999?text=Gostaria de saber mais sobre a SuperTec!', '_blank')}
+              onClick={() => window.open('https://wa.me/5516993757457?text=Gostaria de saber mais sobre a SuperTec!', '_blank')}
               className="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors"
             >
               Conheça Nossa História

@@ -68,7 +68,7 @@ const Benefits = () => {
             Junte-se a mais de 50.000 clientes satisfeitos em toda a região
           </p>
           <button
-            onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Quero experimentar a internet SuperTec!', '_blank')}
+            onClick={() => window.open('https://wa.me/5516993757457?text=Olá! Quero experimentar a internet SuperTec!', '_blank')}
             className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors"
           >
             Começar Agora

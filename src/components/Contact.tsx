@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+// src/components/Contact.tsx
+
+import { useState } from 'react';
 import { Send, Phone, Mail, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
@@ -10,8 +12,10 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Olá! Meu nome é ${formData.name}.%0ATelefone: ${formData.phone}%0A%0AMensagem: ${formData.message}`;
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    // Mensagem corrigida com encodeURIComponent
+    const messageText = `Olá! Meu nome é ${formData.name}.\nTelefone: ${formData.phone}\n\nMensagem: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(messageText);
+    window.open(`https://wa.me/5516993757457?text=${encodedMessage}`, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -23,7 +27,8 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 px-4 md:px-6 bg-gradient-to-br from-background-dark to-black">
-      <div className="max-w-7xl mx-auto">
+        {/* O restante do seu código JSX continua o mesmo... */}
+        <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Entre em <span className="text-secondary">Contato</span>
@@ -44,7 +49,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Telefone</p>
-                    <p className="text-blue-100">(11) 99999-9999</p>
+                    <p className="text-blue-100">(16) 99375-7457</p>
                   </div>
                 </div>
                 

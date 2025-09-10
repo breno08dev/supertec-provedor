@@ -5,9 +5,11 @@ export default {
     extend: {
       colors: {
         'primary': '#2B6CB0',
-        'secondary': '#F9B233',
+        'secondary': '#E87722',
         'background-dark': '#1A365D',
         'highlight': '#E87722',
+        'green': '#17c72eff',
+        'terciary': '#F9B233',
       },
       // Adicione o código abaixo
       animation: {

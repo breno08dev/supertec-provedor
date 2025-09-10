@@ -1,30 +1,30 @@
 import { useState } from 'react';
-import { Wifi, Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react'; 
+import fullCompanyLogo from '../assets/logo.png'; 
 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    // Adicionado `relative` para que o menu dropdown se posicione em relação ao cabeçalho
     <header className="bg-background-dark text-white py-4 px-4 md:px-6 shadow-lg sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Wifi className="h-8 w-8 text-highlight" />
-          <span className="text-2xl font-bold">SuperTec</span>
+        
+        <div>
+          <img src={fullCompanyLogo} alt="Logo SuperTec Telecom" className="h-28 w-auto" />
         </div>
         
-        {/* Navegação para Desktop (sem alterações) */}
+        {/* Navegação para Desktop */}
         <div className="hidden md:flex items-center space-x-6">
-          <nav className="flex space-x-6">
+          <nav className="flex space-x-8 text-lg">
             <a href="#plans" className="hover:text-secondary transition-colors">Planos</a>
             <a href="#benefits" className="hover:text-secondary transition-colors">Benefícios</a>
             <a href="#about" className="hover:text-secondary transition-colors">Sobre</a>
             <a href="#contact" className="hover:text-secondary transition-colors">Contato</a>
           </nav>
-          <a href="tel:+5511999999999" className="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          <a href="tel:+5516993757457" className="flex items-center space-x-2 bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
             <Phone className="h-4 w-4" />
-            <span>(11) 99999-9999</span>
+            <span>(16) 99375-7457</span>
           </a>
         </div>
         
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Menu Dropdown Mobile - NOVO ESTILO */}
+      {/* Menu Dropdown Mobile */}
       <div
         className={`
           md:hidden absolute top-full right-4 mt-2 w-56 
@@ -51,9 +51,9 @@ const Header = () => {
           <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:bg-primary/50 px-4 py-2 rounded-md transition-colors text-base">Sobre</a>
           <a href="#contact" onClick={() => setIsMenuOpen(false)} className="hover:bg-primary/50 px-4 py-2 rounded-md transition-colors text-base">Contato</a>
           <div className="border-t border-white/10 my-2"></div>
-          <a href="tel:+5511999999999" className="flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">
+          <a href="tel:+5516993757457" className="flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">
             <Phone className="h-4 w-4" />
-            <span>(11) 99999-9999</span>
+            <span>(16) 99375-7457</span>
           </a>
         </nav>
       </div>

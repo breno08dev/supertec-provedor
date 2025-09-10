@@ -3,7 +3,10 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de conhecer os planos de internet da SuperTec.', '_blank');
+    const message = 'Olá! Gostaria de conhecer os planos de internet da SuperTec.';
+    const encodedMessage = encodeURIComponent(message);
+    // Alterado de wa.me para api.whatsapp.com
+    window.open(`https://api.whatsapp.com/send?phone=5516993757457&text=${encodedMessage}`, '_blank');
   };
 
   const scrollToPlans = () => {
