@@ -1,8 +1,8 @@
 // src/components/Streaming.tsx
 
 import { Tv, Clapperboard, ArrowRight } from 'lucide-react';
-import moviesImage from '../assets/streaming-movies.jpg'; // <-- Adicione sua imagem de filmes aqui
-import sportsImage from '../assets/streaming-sports.jpg'; // <-- Adicione sua imagem de esportes aqui
+import moviesImage from '../Assets/streaming-movies.jpg'; // <-- Adicione sua imagem de filmes aqui
+import sportsImage from '../Assets/streaming-sports.jpg'; // <-- Adicione sua imagem de esportes aqui
 
 const Streaming = () => {
     const scrollToPlans = () => {
