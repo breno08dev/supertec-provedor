@@ -1,5 +1,4 @@
-
-import { Award, Users, MapPin, Clock } from 'lucide-react';
+import { Award, Users, MapPin, Clock, Eye, Target, HeartHandshake } from 'lucide-react';
 
 const About = () => {
   const stats = [
@@ -57,6 +56,7 @@ const About = () => {
           </div>
         </div>
 
+        {/* Bloco com Certificações / Equipe / Cobertura */}
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           <div className="text-center">
             <div className="bg-highlight w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -82,7 +82,45 @@ const About = () => {
             <p className="text-gray-600">Atendimento local com conhecimento profundo da região</p>
           </div>
         </div>
+{/* Seção de Visão, Missão e Valores */}
+<div className="mt-20">
+  <h2 className="text-4xl md:text-4xl font-bold text-center text-background-dark mb-12">
+    Nossa <span className="text-secondary">Essência</span>
+  </h2>
+  <div className="grid md:grid-cols-3 gap-10">
+    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+      <div className="bg-highlight w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+        <Eye className="h-8 w-8 text-white" />
       </div>
+      <h3 className="text-xl font-bold text-background-dark mb-4">Visão</h3>
+      <p className="text-gray-600 leading-relaxed">
+        Ser referência em conectividade, transformando a vida das pessoas por meio de inovação, 
+        tecnologia e um atendimento que inspira confiança.
+      </p>
+    </div>
+    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+      <div className="bg-highlight w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+        <Target className="h-8 w-8 text-white" />
+      </div>
+      <h3 className="text-xl font-bold text-background-dark mb-4">Missão</h3>
+      <p className="text-gray-600 leading-relaxed">
+        Conectar pessoas e empresas com internet rápida, estável e acessível, 
+        promovendo inclusão digital e impulsionando novos horizontes.
+      </p>
+    </div>
+    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+      <div className="bg-highlight w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+        <HeartHandshake className="h-8 w-8 text-white" />
+      </div>
+      <h3 className="text-xl font-bold text-background-dark mb-4">Valores</h3>
+      <p className="text-gray-600 leading-relaxed">
+        Ética, respeito e inovação estão no nosso DNA. Valorizamos cada cliente e buscamos 
+        sempre entregar soluções que realmente façam diferença.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
   );
 };

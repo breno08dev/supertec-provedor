@@ -1,7 +1,7 @@
 // src/components/Footer.tsx
 
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
-import fullCompanyLogo from '../assets/logo.png'; 
+import fullCompanyLogo from '../assets/supertec.logo2.png'; 
 
 interface FooterProps {
   openPrivacyModal: () => void;

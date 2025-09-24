@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Phone, Menu, X } from 'lucide-react'; 
-import fullCompanyLogo from '../assets/logo.png'; 
+import fullCompanyLogo from '../assets/supertec.logo2.png'; 
 
 
 const Header = () => {

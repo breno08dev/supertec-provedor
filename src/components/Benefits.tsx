@@ -43,7 +43,7 @@ const Benefits = () => {
             Por que escolher a <span className="text-secondary">SuperTec?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Mais de 15 anos oferecendo a melhor experiência em conectividade para nossa região
+            Mais de 4 anos oferecendo a melhor experiência em conectividade para nossa região
           </p>
         </div>
 
@@ -63,9 +63,9 @@ const Benefits = () => {
         </div>
 
         <div className="mt-16 bg-gradient-to-r from-background-dark to-black rounded-2xl p-8 md:p-12 text-center text-white">
-          <h3 className="text-3xl font-bold mb-4">Pronto para experimentar?</h3>
+          <h3 className="text-3xl font-bold mb-4 ">Pronto para experimentar?</h3>
           <p className="text-xl mb-8 text-blue-100">
-            Junte-se a mais de 50.000 clientes satisfeitos em toda a região
+            Junte-se a mais de 1.000 clientes satisfeitos em toda a região
           </p>
           <button
             onClick={() => window.open('https://wa.me/5516993757457?text=Olá! Quero experimentar a internet SuperTec!', '_blank')}

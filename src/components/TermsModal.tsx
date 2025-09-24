@@ -29,9 +29,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
         </div>
 
         <div className="p-6 overflow-y-auto text-gray-700 space-y-4">
-          <p className="font-bold text-red-600">
-            AVISO: Este é um modelo de Termos de Uso. É crucial que você revise, personalize e valide este texto com um profissional da área jurídica para garantir que ele seja adequado ao seu modelo de negócio e às leis vigentes.
-          </p>
+        
           
           <h3 className="text-lg font-bold text-background-dark">1. Aceitação dos Termos</h3>
           <p>Ao contratar e utilizar os serviços de acesso à internet fornecidos pela SuperTec Telecom ("Empresa"), você ("Cliente") concorda em cumprir integralmente com os presentes Termos de Uso. A utilização do serviço implica na aceitação total destas condições.</p>
@@ -59,7 +57,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
           <h3 className="text-lg font-bold text-background-dark">5. Cancelamento e Fidelidade</h3>
           <p>As condições para cancelamento do serviço, bem como a existência de eventuais cláusulas de fidelidade e multas rescisórias, estão detalhadas no contrato de prestação de serviços assinado pelo Cliente no ato da contratação.</p>
           
-          <p className="text-sm text-gray-500 pt-4">Última atualização: 01 de Setembro de 2025.</p>
+          <p className="text-sm text-gray-500 pt-4">Última atualização: 20 de Setembro de 2025.</p>
         </div>
         
         <div className="flex justify-end p-4 border-t">

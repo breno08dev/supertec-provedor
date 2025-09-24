@@ -34,10 +34,7 @@ const PrivacyModal = ({ isOpen, onClose }: PrivacyModalProps) => {
 
         {/* Conteúdo com scroll */}
         <div className="p-6 overflow-y-auto text-gray-700 space-y-4">
-          <p className="font-bold text-red-600">
-            AVISO: Este é um modelo de Política de Privacidade. É crucial que você revise, personalize e valide este texto com um profissional da área jurídica para garantir que ele atenda a todas as exigências da LGPD e seja adequado às práticas da sua empresa.
-          </p>
-          
+         
           <h3 className="text-lg font-bold text-background-dark">1. Coleta de Dados</h3>
           <p>Coletamos informações que você nos fornece diretamente, como nome e telefone, ao preencher o formulário de contato. Também coletamos dados automaticamente através de cookies para melhorar a funcionalidade e a experiência de navegação em nosso site.</p>
           
@@ -62,7 +59,7 @@ const PrivacyModal = ({ isOpen, onClose }: PrivacyModalProps) => {
           <h3 className="text-lg font-bold text-background-dark">6. Alterações na Política</h3>
           <p>Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos que você a revise regularmente para se manter informado sobre como estamos protegendo suas informações. A data da última atualização será sempre indicada no final deste documento.</p>
           
-          <p className="text-sm text-gray-500 pt-4">Última atualização: 01 de Setembro de 2025.</p>
+          <p className="text-sm text-gray-500 pt-4">Última atualização: 20 de Setembro de 2025.</p>
         </div>
         
         {/* Rodapé do Modal */}
