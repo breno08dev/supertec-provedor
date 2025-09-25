@@ -7,11 +7,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-background-dark text-white py-4 px-4 md:px-6 shadow-lg sticky top-0 z-50 relative">
+    // ALT: Removido o padding vertical 'py-2' daqui. A altura será controlada pela logo.
+    <header className="bg-background-dark text-white px-4 md:px-6 shadow-lg sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         <div>
-          <img src={fullCompanyLogo} alt="Logo SuperTec Telecom" className="h-28 w-auto" />
+          {/* ALT: Aumentamos a altura da logo para preencher o cabeçalho. */}
+          <img src={fullCompanyLogo} alt="Logo SuperTec Telecom" className="h-16 md:h-20 w-auto" />
         </div>
         
         {/* Navegação para Desktop */}
