@@ -59,7 +59,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">E-mail</p>
-                    <p className="text-blue-100">contato@supertec.com.br</p>
+                    <p className="text-blue-100">gerentecomercial.elig@gmail.com</p>
                   </div>
                 </div>
                 
@@ -69,7 +69,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">WhatsApp</p>
-                    <p className="text-blue-100">Atendimento 24h disponível</p>
+                    <p className="text-blue-100">Atendimento das 8:00 ás 17:30</p>
                   </div>
                 </div>
               </div>
@@ -78,9 +78,8 @@ const Contact = () => {
             <div className="bg-background-dark rounded-2xl p-6">
               <h4 className="text-xl font-bold text-white mb-4">Horários de Atendimento</h4>
               <div className="space-y-2 text-blue-100">
-                <p><strong>Comercial:</strong> Segunda à Sexta, 8h às 18h</p>
-                <p><strong>Sábados:</strong> 8h às 14h</p>
-                <p><strong>Suporte Técnico:</strong> 24 horas por dia</p>
+                <p><strong>Comercial:</strong> Domingo à Domingo, 8h às 17h30</p>
+                <p><strong>Suporte Técnico:</strong> Domingo à Domingo até as 17h30</p>
               </div>
             </div>
           </div>

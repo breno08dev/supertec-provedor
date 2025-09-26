@@ -14,6 +14,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import CookieConsent from './components/CookieConsent';
 import PrivacyModal from './components/PrivacyModal';
 import TermsModal from './components/TermsModal';
+import ProactiveChatAlert from './components/ProactiveChatAlert';
 
 function App() {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
@@ -44,6 +45,7 @@ function App() {
       {/* 5. Renderize os dois modais */}
       <PrivacyModal isOpen={isPrivacyModalOpen} onClose={closePrivacyModal} />
       <TermsModal isOpen={isTermsModalOpen} onClose={closeTermsModal} />
+      <ProactiveChatAlert />
     </div>
   );
 }

@@ -1,8 +1,9 @@
-// src/components/Testimonials.tsx
+"use client";
 
+// 1. Importe 'motion' e 'Variants'
+import { motion, Variants } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
-// Você pode substituir estes dados pelos depoimentos reais dos seus clientes
 const testimonials = [
   {
     name: 'Mariana Silva',
@@ -25,26 +26,63 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  // 2. Defina as variantes para a animação
+  const titleVariants: Variants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1, y: 0,
+      transition: { duration: 1.0, ease: 'easeOut' }
+    }
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i: number) => ({
+      opacity: 1, y: 0,
+      transition: {
+        // Atraso entre os cards aumentado
+        delay: i * 0.3,
+        ease: 'easeOut',
+        // Duração da animação de cada card aumentada
+        duration: 1.2
+      },
+    }),
+  };
+
   return (
-    <section id="testimonials" className="py-20 px-4 md:px-6 bg-gray-50">
+    <section id="testimonials" className="py-20 px-4 md:px-6 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        {/* 3. Animação para o título */}
+        <motion.div
+          className="text-center mb-16"
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-background-dark mb-4">
             O que nossos <span className="text-secondary">Clientes Dizem</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             A confiança e a satisfação de quem usa a nossa internet todos os dias.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg flex flex-col">
+            // 4. Animação para cada card de depoimento
+            <motion.div
+              key={index}
+              className="bg-white rounded-2xl p-8 shadow-lg flex flex-col"
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={index} // Passa o index para o delay em cascata
+            >
               <Quote className="w-10 h-10 text-secondary mb-4" />
               <p className="text-gray-600 italic mb-6 flex-grow">"{testimonial.quote}"</p>
               <div className="flex items-center mt-auto">
-                {/* Você pode adicionar a foto do cliente aqui se desejar */}
-                {/* <img src="..." alt={testimonial.name} className="w-12 h-12 rounded-full mr-4" /> */}
                 <div>
                   <p className="font-bold text-background-dark">{testimonial.name}</p>
                   <p className="text-sm text-gray-500">{testimonial.location}</p>
@@ -55,7 +93,7 @@ const Testimonials = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

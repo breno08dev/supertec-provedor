@@ -1,5 +1,8 @@
+"use client";
+
+import { motion, Variants } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
-import familiaImage from '../Assets/familia.jpg'; // ajuste o caminho se necessário
+import familiaImage from '../Assets/familia.jpg';
 
 const Hero = () => {
   const handleWhatsApp = () => {
@@ -15,6 +18,48 @@ const Hero = () => {
     document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // 1. Variantes para o container do título (para animar palavra por palavra)
+  const titleContainerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08, // Atraso muito curto entre as palavras
+      },
+    },
+  };
+
+  // 2. Variantes para cada palavra do título
+  const wordVariants: Variants = {
+    hidden: { y: '100%', opacity: 0 },
+    visible: {
+      y: '0%',
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1], // Uma curva de 'easing' suave
+      },
+    },
+  };
+
+  // 3. Variantes para os outros elementos (parágrafo e botões)
+  const otherElementsVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        delay: 0.8, // Atraso para começar APÓS o título animar
+      },
+    },
+  };
+  
+  // Textos do título para facilitar o mapeamento
+  const titleLine1 = "Internet Rápida e Estável";
+  const titleLine2 = "para sua casa ou empresa";
+
+
   return (
     <section
       className="relative text-white py-20 px-4 md:px-6 overflow-hidden bg-cover bg-center"
@@ -22,25 +67,54 @@ const Hero = () => {
         backgroundImage: `url(${familiaImage})`,
       }}
     >
-      {/* Overlay para escurecer a imagem */}
       <div className="absolute inset-0 bg-black/80"></div>
 
       <div className="relative max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          Internet <span className="text-secondary">Rápida</span> e{' '}
-          <span className="text-secondary">Estável</span>
+        {/* Container do Título Principal */}
+        <motion.h1
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight overflow-hidden" // overflow-hidden é importante para o efeito
+          variants={titleContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Mapeia a primeira linha para animar cada palavra */}
+          {titleLine1.split(" ").map((word, index) => (
+            <span key={index} className="inline-block mr-4"> {/* Wrapper para cada palavra */}
+              <motion.span className="inline-block" variants={wordVariants}>
+                {word.includes('Rápida') || word.includes('Estável') ? <span className="text-secondary">{word}</span> : word}
+              </motion.span>
+            </span>
+          ))}
           <br />
+          {/* Mapeia a segunda linha */}
           <span className="text-3xl md:text-4xl lg:text-5xl">
-            para sua casa ou empresa
+            {titleLine2.split(" ").map((word, index) => (
+              <span key={index} className="inline-block mr-3">
+                <motion.span className="inline-block" variants={wordVariants}>
+                  {word}
+                </motion.span>
+              </span>
+            ))}
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-          Conectividade de alta performance com suporte 24h e instalação rápida.
+        {/* Animação para os outros elementos */}
+        <motion.p
+          className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto"
+          variants={otherElementsVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          Conectividade de alta performance com suporte todos os dias e instalação rápida.
           Experimente a diferença de uma internet que não falha.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <motion.div
+          className="flex flex-col md:flex-row gap-4 justify-center items-center"
+          variants={otherElementsVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <button
             onClick={handleWhatsApp}
             className="group bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-3"
@@ -57,13 +131,18 @@ const Hero = () => {
             <span>Ver Planos</span>
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </button>
-        </div>
+        </motion.div>
 
-        <div className="mt-12 text-blue-200">
+        <motion.div 
+          className="mt-12 text-blue-200"
+          variants={otherElementsVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <p className="text-sm">
-            ✓ Instalação gratuita ✓ Sem fidelidade ✓ Suporte 24h
+            ✓ Internet 100% Fibra Óptica ✓ Suporte Todos os Dias <br /> ✓ Conexão de Alta Performance
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
