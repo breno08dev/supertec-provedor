@@ -5,17 +5,29 @@ import fullCompanyLogo from '../Assets/supertec.logo2.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Função para rolar a página para o topo
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-  <header className="bg-background-dark text-white px-4 md:px-6 shadow-lg sticky top-0 z-50 relative h-24 md:h-28">
-  <div className="max-w-7xl mx-auto flex items-center justify-between h-full">
-    
-    <div className="h-full flex items-center">
-      <img 
-        src={fullCompanyLogo} 
-        alt="Logo SuperTec Telecom" 
-        className="h-full w-auto object-contain" 
-      />
-    </div>
+    <header className="bg-background-dark text-white px-4 md:px-6 shadow-lg sticky top-0 z-50 relative h-24 md:h-28">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-full">
+        
+        <div className="h-full flex items-center">
+          {/* A imagem agora é um botão clicável que chama a função scrollToTop */}
+          <button onClick={scrollToTop} className="cursor-pointer h-full">
+            <img 
+              src={fullCompanyLogo} 
+              alt="Logo SuperTec Telecom" 
+              className="h-full w-auto object-contain" 
+            />
+          </button>
+        </div>
+        
         {/* Navegação Desktop */}
         <div className="hidden md:flex items-center space-x-6">
           <nav className="flex space-x-8 text-lg">

@@ -57,7 +57,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
           <h3 className="text-lg font-bold text-background-dark">5. Cancelamento e Fidelidade</h3>
           <p>As condições para cancelamento do serviço, bem como a existência de eventuais cláusulas de fidelidade e multas rescisórias, estão detalhadas no contrato de prestação de serviços assinado pelo Cliente no ato da contratação.</p>
           
-          <p className="text-sm text-gray-500 pt-4">Última atualização: 20 de Setembro de 2025.</p>
+          <p className="text-sm text-gray-500 pt-4">Última atualização: 08 de Outubro de 2025.</p>
         </div>
         
         <div className="flex justify-end p-4 border-t">

@@ -54,12 +54,12 @@ const PrivacyModal = ({ isOpen, onClose }: PrivacyModalProps) => {
           <p>A SuperTec não vende, aluga ou compartilha suas informações pessoais com terceiros para fins de marketing sem o seu consentimento explícito. Podemos compartilhar seus dados com prestadores de serviços que nos auxiliam em nossas operações (como plataformas de atendimento ao cliente), sempre sob estritas obrigações de confidencialidade.</p>
 
           <h3 className="text-lg font-bold text-background-dark">5. Seus Direitos</h3>
-          <p>De acordo com a LGPD, você tem o direito de acessar, corrigir, anonimizar ou eliminar seus dados pessoais. Para exercer seus direitos, entre em contato conosco através do e-mail: <span className="font-semibold">contato@supertec.com.br</span>.</p>
+          <p>De acordo com a LGPD, você tem o direito de acessar, corrigir, anonimizar ou eliminar seus dados pessoais. Para exercer seus direitos, entre em contato conosco através do e-mail: <span className="font-semibold">gerentecomercial.elig@gmail.com</span>.</p>
 
           <h3 className="text-lg font-bold text-background-dark">6. Alterações na Política</h3>
           <p>Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos que você a revise regularmente para se manter informado sobre como estamos protegendo suas informações. A data da última atualização será sempre indicada no final deste documento.</p>
           
-          <p className="text-sm text-gray-500 pt-4">Última atualização: 20 de Setembro de 2025.</p>
+          <p className="text-sm text-gray-500 pt-4">Última atualização: 08 de Outubro de 2025.</p>
         </div>
         
         {/* Rodapé do Modal */}

@@ -15,6 +15,8 @@ import CookieConsent from './components/CookieConsent';
 import PrivacyModal from './components/PrivacyModal';
 import TermsModal from './components/TermsModal';
 import ProactiveChatAlert from './components/ProactiveChatAlert';
+import Analytics from './components/Analytics';
+
 
 function App() {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Analytics />
       <Header />
       <Hero />
       <Plans />
