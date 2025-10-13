@@ -1,6 +1,5 @@
 "use client";
 
-// 1. Importe 'motion' e 'Variants'
 import { motion, Variants } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
@@ -26,7 +25,7 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  // 2. Defina as variantes para a animação
+  // Variantes para a animação
   const titleVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -40,11 +39,9 @@ const Testimonials = () => {
     visible: (i: number) => ({
       opacity: 1, y: 0,
       transition: {
-        // Atraso entre os cards aumentado
-        delay: i * 0.3,
+        delay: i * 0.2, // Delay ajustado
         ease: 'easeOut',
-        // Duração da animação de cada card aumentada
-        duration: 1.2
+        duration: 1.0 // Duração da animação de cada card aumentada
       },
     }),
   };
@@ -52,7 +49,7 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 px-4 md:px-6 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* 3. Animação para o título */}
+        {/* Animação para o título */}
         <motion.div
           className="text-center mb-16"
           variants={titleVariants}
@@ -70,7 +67,7 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            // 4. Animação para cada card de depoimento
+            // Animação para cada card de depoimento
             <motion.div
               key={index}
               className="bg-white rounded-2xl p-8 shadow-lg flex flex-col"

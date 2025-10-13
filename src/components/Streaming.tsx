@@ -2,21 +2,21 @@
 
 import { motion, Variants } from 'framer-motion';
 import { Tv, Clapperboard, ArrowRight } from 'lucide-react';
-import moviesImage from '../Assets/streaming-movies.jpg';
-import sportsImage from '../Assets/streaming-sports.jpg';
+import moviesImage from '../Assets/streaming-movies.webp'; // Otimizado para .webp
+import sportsImage from '../Assets/streaming-sports.webp'; // Otimizado para .webp
 
 const Streaming = () => {
     const scrollToPlans = () => {
         document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    // Variantes com transições mais lentas
+    // Variantes com transições mais lentas e suaves
     const titleVariants: Variants = {
         hidden: { opacity: 0, y: -20 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1.2, ease: 'easeOut' }
+            transition: { duration: 1.0, ease: 'easeOut' } // Duração ajustada
         }
     };
 
@@ -25,7 +25,7 @@ const Streaming = () => {
         visible: {
             opacity: 1,
             x: 0,
-            transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] }
+            transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } // Duração ajustada
         }
     };
 
@@ -34,7 +34,7 @@ const Streaming = () => {
         visible: {
             opacity: 1,
             x: 0,
-            transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.3 }
+            transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 } // Duração e delay ajustados
         }
     };
 
@@ -68,11 +68,13 @@ const Streaming = () => {
                         <img
                             src={moviesImage}
                             alt="Cenas de filmes e séries populares"
+                            loading="lazy" // Otimização de carregamento
                             className="absolute top-0 left-0 w-2/3 sm:w-1/2 md:w-2/3 h-auto rounded-2xl shadow-2xl object-cover transform -rotate-6 transition-transform duration-300 hover:rotate-0 hover:scale-105"
                         />
                         <img
                             src={sportsImage}
                             alt="Partida de futebol ao vivo na TV"
+                            loading="lazy" // Otimização de carregamento
                             className="absolute bottom-0 right-0 w-2/3 sm:w-1/2 md:w-2/3 h-auto rounded-2xl shadow-2xl object-cover transform rotate-6 border-4 border-background-dark transition-transform duration-300 hover:rotate-0 hover:scale-105"
                         />
                     </motion.div>

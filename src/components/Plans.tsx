@@ -60,18 +60,16 @@ const Plans = () => {
     window.open(`https://api.whatsapp.com/send?phone=5516993757457&text=${encodedMessage}`, '_blank');
   };
 
-  // Variantes da animação com transição mais lenta
+  // Variantes da animação com transição mais lenta e suave
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        // Atraso entre os cards aumentado para 0.3s
-        delay: i * 0.3, 
+        delay: i * 0.2, 
         ease: 'easeOut',
-        // Duração da animação de cada card aumentada para 1.2s
-        duration: 1.2 
+        duration: 1.0 // Duração ajustada
       },
     }),
   };
@@ -84,7 +82,6 @@ const Plans = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          // Duração da animação do título aumentada para 1s
           transition={{ duration: 1.0, ease: 'easeOut' }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-background-dark mb-4">

@@ -2,7 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
-import familiaImage from '../Assets/familia.jpg';
+import familiaImage from '../Assets/familia.webp'; // Otimizado para .webp
 
 const Hero = () => {
   const handleWhatsApp = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.08, // Atraso muito curto entre as palavras
+        staggerChildren: 0.1, // Atraso suave entre as palavras
       },
     },
   };
@@ -35,8 +35,8 @@ const Hero = () => {
       y: '0%',
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1], // Uma curva de 'easing' suave
+        duration: 0.8, // Duração aumentada para mais suavidade
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -48,9 +48,9 @@ const Hero = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.8, // Duração aumentada
         ease: 'easeOut',
-        delay: 0.8, // Atraso para começar APÓS o título animar
+        delay: 1.0, // Atraso para começar APÓS o título animar
       },
     },
   };
@@ -63,10 +63,14 @@ const Hero = () => {
   return (
     <section
       className="relative text-white py-20 px-4 md:px-6 overflow-hidden bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${familiaImage})`,
-      }}
     >
+      {/* Imagem otimizada com lazy loading */}
+      <img
+        src={familiaImage}
+        alt="Família assistindo TV"
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div className="absolute inset-0 bg-black/80"></div>
 
       <div className="relative max-w-7xl mx-auto text-center">
@@ -79,7 +83,7 @@ const Hero = () => {
         >
           {/* Mapeia a primeira linha para animar cada palavra */}
           {titleLine1.split(" ").map((word, index) => (
-            <span key={index} className="inline-block mr-4"> {/* Wrapper para cada palavra */}
+            <span key={index} className="inline-block md:mr-4 mr-2"> {/* Wrapper para cada palavra */}
               <motion.span className="inline-block" variants={wordVariants}>
                 {word.includes('Rápida') || word.includes('Estável') ? <span className="text-secondary">{word}</span> : word}
               </motion.span>
@@ -89,7 +93,7 @@ const Hero = () => {
           {/* Mapeia a segunda linha */}
           <span className="text-3xl md:text-4xl lg:text-5xl">
             {titleLine2.split(" ").map((word, index) => (
-              <span key={index} className="inline-block mr-3">
+              <span key={index} className="inline-block md:mr-3 mr-1.5">
                 <motion.span className="inline-block" variants={wordVariants}>
                   {word}
                 </motion.span>

@@ -1,6 +1,5 @@
 "use client";
 
-// 1. Importe 'motion' e 'Variants'
 import { motion, Variants } from 'framer-motion';
 import { Zap, Shield, Clock, Wrench, Users, Headphones } from 'lucide-react';
 
@@ -38,7 +37,7 @@ const Benefits = () => {
     }
   ];
 
-  // 2. Defina as variantes para a animação
+  // Variantes para a animação
   const titleVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -53,11 +52,9 @@ const Benefits = () => {
       opacity: 1,
       y: 0,
       transition: {
-        // Atraso entre os cards
-        delay: i * 0.2,
+        delay: i * 0.15, // Delay ajustado
         ease: 'easeOut',
-        // Duração da animação de cada card
-        duration: 1.2
+        duration: 1.0 // Duração ajustada
       },
     }),
   };
@@ -72,10 +69,8 @@ const Benefits = () => {
 
 
   return (
-    // Adicionado overflow-hidden para a seção
     <section id="benefits" className="py-20 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* 3. Animação do título */}
         <motion.div
           className="text-center mb-16"
           variants={titleVariants}
@@ -93,7 +88,6 @@ const Benefits = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            // 4. Animação de cada card de benefício
             <motion.div
               key={index}
               className="group bg-gray-50 rounded-2xl p-8 text-center hover:bg-gradient-to-br hover:from-yellow-50 hover:to-blue-50 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105"
@@ -101,7 +95,7 @@ const Benefits = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={index} // Passa o index para o delay em cascata
+              custom={index}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-highlight rounded-full mb-6 group-hover:bg-orange-600 transition-colors">
                 <benefit.icon className="h-8 w-8 text-white" />
@@ -112,7 +106,6 @@ const Benefits = () => {
           ))}
         </div>
 
-        {/* 5. Animação do bloco final de CTA */}
         <motion.div
           className="mt-16 bg-gradient-to-r from-background-dark to-black rounded-2xl p-8 md:p-12 text-center text-white"
           variants={ctaVariants}
