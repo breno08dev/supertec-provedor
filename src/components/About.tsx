@@ -1,5 +1,6 @@
 "use client";
 
+// 1. Importe 'motion' e 'Variants'
 import { motion, Variants } from 'framer-motion';
 import { Award, Users, MapPin, Clock, Eye, Target, HeartHandshake } from 'lucide-react';
 
@@ -11,30 +12,30 @@ const About = () => {
     { icon: Award, value: '99.9%', label: 'Disponibilidade' }
   ];
 
-  // Variantes de animação ajustadas para serem mais lentas e suaves
+  // 2. Defina as variantes para a animação
   const textColumnVariants: Variants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1.0, ease: 'easeOut' } }
+    visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: 'easeOut' } }
   };
 
   const statsContainerVariants: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1, x: 0,
-      transition: { duration: 1.0, ease: 'easeOut', staggerChildren: 0.2 }
+      transition: { duration: 1.2, ease: 'easeOut', staggerChildren: 0.2 }
     }
   };
 
   const statItemVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } }
+    visible: { opacity: 1, scale: 1 }
   };
 
   const featuresVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1, y: 0,
-      transition: { delay: i * 0.2, duration: 0.8, ease: 'easeOut' }
+      transition: { delay: i * 0.2, duration: 1.0, ease: 'easeOut' }
     })
   };
   
@@ -42,7 +43,7 @@ const About = () => {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
         opacity: 1, y: 0,
-        transition: { delay: i * 0.2, duration: 1.0, ease: 'easeOut' }
+        transition: { delay: i * 0.25, duration: 1.2, ease: 'easeOut' }
     })
   };
 
@@ -53,7 +54,7 @@ const About = () => {
       <section id="about" className="py-20 px-4 md:px-6 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Animação para a coluna de texto */}
+            {/* 3. Animação para a coluna de texto */}
             <motion.div
               className="text-center lg:text-left"
               variants={textColumnVariants}
@@ -77,7 +78,7 @@ const About = () => {
               </button>
             </motion.div>
 
-            {/* Animação para o container e os cards de estatísticas */}
+            {/* 4. Animação para o container e os cards de estatísticas */}
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 gap-6"
               variants={statsContainerVariants}
@@ -102,7 +103,7 @@ const About = () => {
           </div>
 
           <div className="mt-16 grid md:grid-cols-3 gap-8">
-            {/* Animação para os itens de features */}
+            {/* 5. Animação para os itens de features */}
             <motion.div 
               className="text-center" 
               variants={featuresVariants} 
@@ -164,7 +165,7 @@ const About = () => {
             Nossa <span className="text-secondary">Essência</span>
           </motion.h2>
           <div className="grid md:grid-cols-3 gap-10">
-            {/* Animação para os cards de essência */}
+            {/* 6. Animação para os cards de essência */}
             <motion.div 
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:bg-white/10 transition-colors text-center"
               variants={essenceCardVariants}

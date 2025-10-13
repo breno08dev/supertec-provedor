@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import Streaming from './components/Streaming'; 
 import Plans from './components/Plans';
 import Benefits from './components/Benefits';
-import About from './components/About';
+import About from './components/About'; // <- Seu componente está aqui
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -17,16 +17,13 @@ import TermsModal from './components/TermsModal';
 import ProactiveChatAlert from './components/ProactiveChatAlert';
 import Analytics from './components/Analytics';
 
-
 function App() {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
-  // 2. Adicione o estado para o novo modal
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
   const openPrivacyModal = () => setIsPrivacyModalOpen(true);
   const closePrivacyModal = () => setIsPrivacyModalOpen(false);
 
-  // 3. Adicione as funções para controlar o novo modal
   const openTermsModal = () => setIsTermsModalOpen(true);
   const closeTermsModal = () => setIsTermsModalOpen(false);
 
@@ -34,18 +31,19 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <Analytics />
       <Header />
-      <Hero />
-      <Plans />
-      <Streaming />
-      <Benefits />
-      <About />
-      <Testimonials/>
-      <Contact />
-     <Footer openPrivacyModal={openPrivacyModal} openTermsModal={openTermsModal} />
+      <main>
+        <Hero />
+        <Plans />
+        <Streaming />
+        <Benefits />
+        <About />
+        <Testimonials/>
+        <Contact />
+      </main>
+      <Footer openPrivacyModal={openPrivacyModal} openTermsModal={openTermsModal} />
       <WhatsAppButton />
       <CookieConsent openPrivacyModal={openPrivacyModal} />
       
-      {/* 5. Renderize os dois modais */}
       <PrivacyModal isOpen={isPrivacyModalOpen} onClose={closePrivacyModal} />
       <TermsModal isOpen={isTermsModalOpen} onClose={closeTermsModal} />
       <ProactiveChatAlert />

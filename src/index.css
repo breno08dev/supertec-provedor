@@ -1,3 +1,24 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animações com Intersection Observer */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efeito de cascata para os cards */
+.is-visible .animate-card:nth-child(1) { transition-delay: 100ms; }
+.is-visible .animate-card:nth-child(2) { transition-delay: 200ms; }
+.is-visible .animate-card:nth-child(3) { transition-delay: 300ms; }
+.is-visible .animate-card:nth-child(4) { transition-delay: 400ms; }
+.is-visible .animate-card:nth-child(5) { transition-delay: 500ms; }
+.is-visible .animate-card:nth-child(6) { transition-delay: 600ms; }

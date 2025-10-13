@@ -1,9 +1,12 @@
-"use client";
-
-import { motion, Variants } from 'framer-motion';
 import { Zap, Shield, Clock, Wrench, Users, Headphones } from 'lucide-react';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'; // 1. Importe o hook
 
 const Benefits = () => {
+  // 2. Use o hook para observar cada grupo de elementos
+  const [titleRef, isTitleVisible] = useIntersectionObserver();
+  const [cardsRef, areCardsVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [ctaRef, isCtaVisible] = useIntersectionObserver();
+
   const benefits = [
     {
       icon: Zap,
@@ -37,46 +40,12 @@ const Benefits = () => {
     }
   ];
 
-  // Variantes para a animação
-  const titleVariants: Variants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1, y: 0,
-      transition: { duration: 1.0, ease: 'easeOut' }
-    }
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.15, // Delay ajustado
-        ease: 'easeOut',
-        duration: 1.0 // Duração ajustada
-      },
-    }),
-  };
-
-  const ctaVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1, scale: 1,
-      transition: { duration: 1.0, ease: 'easeOut' }
-    }
-  };
-
-
-  return (
+   return (
     <section id="benefits" className="py-20 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="text-center mb-16"
-          variants={titleVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <div
+          ref={titleRef}
+          className={`fade-in-section text-center mb-16 ${isTitleVisible ? 'is-visible' : ''}`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-background-dark mb-4">
             Por que escolher a <span className="text-secondary">SuperTec?</span>
@@ -84,34 +53,29 @@ const Benefits = () => {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Mais de 5 anos oferecendo a melhor experiência em conectividade para nossa região
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          ref={cardsRef}
+          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 ${areCardsVisible ? 'is-visible' : ''}`}
+        >
           {benefits.map((benefit, index) => (
-            <motion.div
+            <div
               key={index}
-              className="group bg-gray-50 rounded-2xl p-8 text-center hover:bg-gradient-to-br hover:from-yellow-50 hover:to-blue-50 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105"
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={index}
+              className={`fade-in-section animate-card group bg-gray-50 rounded-2xl p-8 text-center hover:bg-gradient-to-br hover:from-yellow-50 hover:to-blue-50 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 ${areCardsVisible ? 'is-visible' : ''}`}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-highlight rounded-full mb-6 group-hover:bg-orange-600 transition-colors">
                 <benefit.icon className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-background-dark mb-4">{benefit.title}</h3>
               <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          className="mt-16 bg-gradient-to-r from-background-dark to-black rounded-2xl p-8 md:p-12 text-center text-white"
-          variants={ctaVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <div
+          ref={ctaRef}
+          className={`fade-in-section mt-16 bg-gradient-to-r from-background-dark to-black rounded-2xl p-8 md:p-12 text-center text-white ${isCtaVisible ? 'is-visible' : ''}`}
         >
           <h3 className="text-3xl font-bold mb-4 ">Pronto para experimentar?</h3>
           <p className="text-xl mb-8 text-blue-100">
@@ -123,7 +87,7 @@ const Benefits = () => {
           >
             Começar Agora
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
