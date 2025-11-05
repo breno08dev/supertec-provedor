@@ -93,19 +93,31 @@ const Footer = ({ openPrivacyModal, openTermsModal }: FooterProps) => {
         </div>
 
         {/* RODAPÉ FINAL */}
-        <div className="border-t border-primary/30 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
-            <p className="text-blue-100 text-sm">
-              © 2025 SuperTec Telecom. Todos os direitos reservados.
-            </p>
-            <div className="flex space-x-6 text-sm text-blue-100">
-              <button onClick={openPrivacyModal} className="hover:text-secondary transition-colors">
-                Política de Privacidade
-              </button>
-              <button onClick={openTermsModal} className="hover:text-secondary transition-colors">
-                Termos de Uso
-              </button>
-            </div>
+        <div className="border-t border-primary/30 pt-8 text-center space-y-4">
+          <p className="text-blue-100 text-sm">
+            © 2025 SuperTec Telecom. Todos os direitos reservados.
+          </p>
+
+          <div className="flex justify-center space-x-6 text-sm text-blue-100">
+            <button onClick={openPrivacyModal} className="hover:text-secondary transition-colors">
+              Política de Privacidade
+            </button>
+            <button onClick={openTermsModal} className="hover:text-secondary transition-colors">
+              Termos de Uso
+            </button>
+          </div>
+
+          {/* CRÉDITO DE DESENVOLVIMENTO */}
+          <div className="pt-6 text-sm">
+            Desenvolvido por{' '}
+            <a
+              href="https://conectnew.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#8B5CF6] hover:underline transition-colors"
+            >
+              Conect New
+            </a>
           </div>
         </div>
       </div>
